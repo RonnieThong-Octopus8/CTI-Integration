@@ -1,0 +1,22 @@
+.no-borders tr, .no-borders td {
+  background: none !important;
+  border: none !important;
+}
+
+.bold-label {
+  font-weight: bold;
+}
+
+.input-text {
+  width: 100% !important;
+}
+
+.input-text-invalid {
+  width: 100% !important;
+  border: 2px solid red !important;
+}
+
+.ui-widget-header {
+  background: #fafafa;
+  border: none;
+}

@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:c="http://java.sun.com/jsp/jstl/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:pe="http://primefaces.org/ui/extensions"
+      xmlns:nm="http://java.sun.com/jsf/composite/composites"
+      xmlns:fn="http://novomind.com/ecom/functions">
+<f:view encoding="UTF-8" contentType="text/html">
+  <h:head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="cache-control" content="no-cache" />
+    <meta http-equiv="expires" content="0" />
+    <meta http-equiv="pragma" content="no-cache" />
+    <h:outputStylesheet name="css/apps/crm/training/trainingCommon.css" />
+  </h:head>
+
+  <h:body>
+    <h:form id="trainingForm">
+    
+      <h:messages id="message" infoStyle="color:blue"
+        warnStyle="color:orange" errorStyle="color:red" />
+        
+      <p:commandButton value="Search" action="#{vsb.get('CrmTrainingTabBean').searchSourceId}" update="sourceIdPanel,iframe" />
+
+      <p:panelGrid columns="2" styleClass="no-borders">
+        <h:outputText for="contactPhone" value="Contact Phone:" styleClass="bold-label" />
+        <p:inputText id="contactPhone"
+          value="#{vsb.get('CrmTrainingTabBean').contactPhone}"
+          required="false"
+          requiredMessage="Mandatory field not filled: Contact Phone"
+          styleClass="#{component.valid ? 'input-text' : 'input-text-invalid'}" />
+      </p:panelGrid>
+      <p:panelGrid id="sourceIdPanel" columns="3">
+        <h:outputText value="Caller Number:" />
+        <h:outputText value="#{vsb.get('CrmTrainingTabBean').sourceId}" />
+        </p:panelGrid>
+      <p:panelGrid id="sourceIdPanel" columns="4">
+        <h:outputText value="Call ID:" />
+        <h:outputText value="#{vsb.get('CrmTrainingTabBean').callId}" />
+      </p:panelGrid>
+
+      <h:panelGroup id="iframe" layout="block">
+        <p:panel>
+          <f:facet name="header">
+            <h:outputText value="External CRM: " />
+            <h:outputLink target="_blank"
+              value="#{vsb.get('CrmTrainingTabBean').crmLink}">
+              <h:outputText value="#{vsb.get('CrmTrainingTabBean').crmLink}" />
+            </h:outputLink>
+          </f:facet>
+          <iframe src="#{vsb.get('CrmTrainingTabBean').crmLink}"
+            title="external crm" width="100%" height="800"></iframe>
+        </p:panel>
+      </h:panelGroup>
+    </h:form>
+  </h:body>
+</f:view>
+</html>

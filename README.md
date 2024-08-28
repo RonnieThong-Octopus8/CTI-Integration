@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # iAgent Custom CRM Training #
 
 ## Overview ##
@@ -62,3 +63,7 @@ For more information or support, please contact:
 
 Ronnie Thong
 ronniethong@octopus8.com
+=======
+# ecom-app-iagent-custom-crm-training
+
+>>>>>>> 9d23bbf (Initial commit for CTI Integration project)

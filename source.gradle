@@ -1,0 +1,9 @@
+task sourceJar(dependsOn: classes, type: Jar) {
+  classifier = 'sources'
+  from sourceSets.main.java
+  from sourceSets.main.resources
+}
+
+artifacts {
+  archives sourceJar
+}

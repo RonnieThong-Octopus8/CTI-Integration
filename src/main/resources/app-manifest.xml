@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xmlns="http://www.novomind.com/schema/app"
+     xmlns:appstore="http://www.novomind.com/schema/appstore"
+     xmlns:ecom="http://www.novomind.com/schema/metadata"
+     xsi:schemaLocation="http://www.novomind.com/schema/app https://apps.novomind.com/schemas/manifest-schema/manifest-schema.xsd http://www.novomind.com/schema/appstore https://apps.novomind.com/schemas/appstore-schema/appstore-schema.xsd http://www.novomind.com/schema/metadata https://apps.novomind.com/schemas/ecom-metadata-schema/ecom-metadata-schema.xsd">
+
+    <groupId>@group@</groupId>
+    <appId>@appId@</appId>
+    <name>novomind iAGENT Connect CiviCRM Octopus8 App</name>
+
+    <version>@version@</version>
+    <supportedVersion>
+        <minimum>@minimum-iagent-version@</minimum>
+    </supportedVersion>
+    <product>iagent</product>
+
+    <descriptions>
+        <description locale="en">This app is for connecting Octopus8 CiviCRM.</description>
+        <description locale="de">Diese App ist für konnectung zu Octopus8 CiviCRM.</description>
+    </descriptions>
+
+    <vendor>novomind AG</vendor>
+
+    <icon>META-INF/manifest-resources/icon.png</icon>
+
+    <download>false</download>
+    <email>apps@novomind.com</email>
+    <phone>+49408080710</phone>
+
+    <longDescriptions>
+        <longDescription locale="en">
+            This description is written in [markdown](https://en.wikipedia.org/wiki/Markdown)
+        </longDescription>
+    </longDescriptions>
+
+
+    <sellingPoints>
+        <sellingPoint locale="en">Simple configuration</sellingPoint>
+        <sellingPoint locale="en">CSS included</sellingPoint>
+        <sellingPoint locale="en">Text included</sellingPoint>
+    </sellingPoints>
+
+    <metadata>
+        <ecom:config>
+            <ecom:groups name="CONNECTION">
+                <ecom:fields key="site" name="SITE" dataType="String" guiType="text" description="CiviCRM site address"/>
+            </ecom:groups>
+            <ecom:groups name="API AUTHENTICATION">
+                <ecom:fields key="user_key" name="USER KEY" dataType="String" guiType="text" description="User Key"/>
+                <ecom:fields key="site_key" name="SITE KEY" dataType="String" guiType="text" description="Site Key"/>
+            </ecom:groups>
+            <ecom:groups name="API AUTHENTICATION">
+                <ecom:fields key="tab_heading" name="TAB HEADING" dataType="String" guiType="text" description="TAB HEADING"/>
+                <ecom:fields key="tab_fullscreen" name="TAB FULLSCREEN" dataType="Boolean" guiType="checkbox" description="Tab Fullscreen"/>
+            </ecom:groups>
+        </ecom:config>
+    </metadata>
+
+</app>

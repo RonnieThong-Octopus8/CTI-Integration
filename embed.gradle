@@ -1,0 +1,32 @@
+configurations {
+  embedImplementation
+  implementation {
+    extendsFrom embedImplementation
+  }
+}
+
+eclipse.classpath.plusConfigurations += [configurations.embedImplementation]
+
+ext.bundleClassPath = {
+  def list = ['.']
+  configurations.embedImplementation.each {
+    list += 'OSGI-INF/lib/' + it.name
+  }
+  return list.join(',')
+}
+
+ext.includeResourceCopy = {
+  def list = []
+  configurations.embedImplementation.each {
+    list += 'OSGI-INF/lib/' + it.name + "=" + it.path.replace('\\', '/')
+  }
+  return list.join(',')
+}
+
+ext.includeResourceExtract = {
+  def list = []
+  configurations.embedImplementation.each {
+    list += '@' + it.path.replace('\\', '/')
+  }
+  return list.join(',')
+}
