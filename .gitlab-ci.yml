@@ -1,0 +1,17 @@
+image: gitlab-registry.novomind.com/ecom/docker-adoptopenjdk:11
+
+before_script:
+  - ${JAVA_HOME}/bin/java -version
+  - chmod +x gradlew
+  - ./gradlew -g /cache/.gradle -version
+
+stages:
+  - build
+
+Build:
+  stage: build
+  script:
+    - ./gradlew -g /cache/.gradle clean build
+  artifacts:
+    paths:
+      - build/libs/*.jar

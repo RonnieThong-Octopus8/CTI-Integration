@@ -1,0 +1,31 @@
+import org.apache.tools.ant.filters.ReplaceTokens
+
+jar {
+
+  into ('dist/routing') {
+    from project(':ecom-app-iagent-custom-crm-training-routing-plugin').jar
+    from project(':ecom-app-iagent-custom-crm-training-common-plugin').jar
+  }
+
+  into ('dist/agent') {
+    from project(':ecom-app-iagent-custom-crm-training-agent-plugin').jar
+    from project(':ecom-app-iagent-custom-crm-training-common-plugin').jar
+  }
+
+  into ('dist/core') {
+    from project(':ecom-app-iagent-custom-crm-training-core-plugin').jar
+  }
+
+  into ('dist/chat') {
+    from project(':ecom-app-iagent-custom-crm-training-chat-plugin').jar
+    from project(':ecom-app-iagent-custom-crm-training-common-plugin').jar
+  }
+
+  processResources {
+    from('src/main/resources') {
+      duplicatesStrategy = DuplicatesStrategy.INCLUDE
+      include 'app-manifest.xml'
+      filter(ReplaceTokens, tokens: ['group' : project.group, 'appId' : project.name, 'version' : '' + project.version, 'minimum-iagent-version' : '' + project['minimum-iagent-version']])
+    }
+  }
+}

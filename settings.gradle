@@ -1,0 +1,8 @@
+rootProject.name = 'ecom-app-iagent-custom-crm-training'
+
+include 'ecom-app-iagent-custom-crm-training-agent-plugin'
+include 'ecom-app-iagent-custom-crm-training-chat-plugin'
+include 'ecom-app-iagent-custom-crm-training-common-plugin'
+include 'ecom-app-iagent-custom-crm-training-core-plugin'
+include 'ecom-app-iagent-custom-crm-training-routing-plugin'
+include 'ecom-app-iagent-custom-crm-training-shared'

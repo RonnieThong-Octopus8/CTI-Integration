@@ -1,0 +1,30 @@
+plugins {
+  id "biz.aQute.bnd.builder" version "5.3.0"
+}
+
+dependencies {
+  implementation ('org.slf4j:slf4j-api:' + project['slf4j'])
+  implementation ('jakarta.inject:jakarta.inject-api:' + project['jakarta-inject'])
+  implementation ('com.novomind.ecom:ecom-api-iagent:' + project['minimum-iagent-version'])
+
+//  embedImplementation ('org.apache.httpcomponents:httpclient:' + project['httpclient'])
+  embedImplementation (project(':ecom-app-iagent-custom-crm-training-shared')) {
+    exclude group: 'org.slf4j', module: 'slf4j-api'
+    exclude group: 'com.novomind.ecom', module: 'ecom-api-iagent'
+  }
+  implementation (project(':ecom-app-iagent-custom-crm-training-common-plugin')) {
+    exclude group: 'org.slf4j', module: 'slf4j-api'
+    exclude group: 'com.novomind.ecom', module: 'ecom-api-iagent'
+    exclude group: ':ecom-app-iagent-custom-crm-training-core-plugin'
+  }
+}
+
+jar {
+  bnd (
+    'Bundle-ClassPath': bundleClassPath(),
+    'Include-Resource': includeResourceCopy(),
+    '-fixupmessages': 'Classes found in the wrong directory',
+    '-removeheaders': 'Include-Resource',
+    'Import-Package': '!org.apache.avalon.framework.logger*, !org.apache.log*, *'
+  )
+}
