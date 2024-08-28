@@ -27,16 +27,18 @@ CiviCRM & Novomind API Credentials: Obtain necessary API keys for connecting to 
 
 ## Installation ##
 ### Clone the Repository: ###
+```
 git clone https://github.com/yourusername/novomind-applications.git
 cd novomind-applications/iagent-civicrm-master
-
+```
 ### Configure API Keys: ###
 Navigate to inside Novomind application configurations.
 Replace placeholders with your actual CiviCRM and Novomind API credentials.
 
 ### Build the Project: Use Gradle to build the project:
+```
 ./gradlew build
-
+```
 Run the Application: You can run the application directly after uploading the built file into Novomind.
 
 ## Running the Project
@@ -68,17 +70,20 @@ Adjust the settings as needed according to your environment or integration requi
 
 ## Updating the Project ##
 ### Pull the Latest Changes: ###
+```
 git pull origin main
-
+```
 Rebuild the Project: After pulling updates, rebuild the project to apply the latest changes:
+```
 ./gradlew build
-
+```
 Run the Updated Application: Execute the application as usual by uploading the gradlew file.
 
 ## Troubleshooting ##
 Dependency Issues: Run the following command if you encounter any issues with missing dependencies:
+```
 ./gradlew dependencies
-
+```
 ## Configuration Errors: Ensure that all API keys and environment variables are properly configured and formatted. ##
 
 Contributing
