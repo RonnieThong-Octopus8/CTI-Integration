@@ -11,12 +11,12 @@ CTI Capabilities: Seamless integration between CRM systems and telephony, allowi
 Dynamic Configuration: API keys and endpoints can be dynamically configured for different CRM systems, enabling flexibility across multiple environments.
 
 ## Project Structure ##
-ecom-app-iagent-custom-crm-training-agent-plugin: Handles agent-related functionalities.
-ecom-app-iagent-custom-crm-training-chat-plugin: Manages chat interactions.
-ecom-app-iagent-custom-crm-training-core-plugin: Core CRM functionalities and integrations.
-ecom-app-iagent-custom-crm-training-routing-plugin: Handles routing logic for calls and chats.
-gradle/: Gradle wrapper files for building and managing dependencies.
-src/: Main source code for the core application and plugins.
+* ecom-app-iagent-custom-crm-training-agent-plugin: Handles agent-related functionalities.
+* ecom-app-iagent-custom-crm-training-chat-plugin: Manages chat interactions.
+* ecom-app-iagent-custom-crm-training-core-plugin: Core CRM functionalities and integrations.
+* ecom-app-iagent-custom-crm-training-routing-plugin: Handles routing logic for calls and chats.
+* gradle/: Gradle wrapper files for building and managing dependencies.
+* src/: Main source code for the core application and plugins.
 
 ## Installation Guide ##
 Prerequisites
