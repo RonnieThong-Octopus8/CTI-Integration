@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-# iAgent Custom CRM Training #
+# iAgent CTI Integration with CiviCRM #
 
 ## Overview ##
 This project provides an integration solution between Novomind and CiviCRM, offering a comprehensive Computer Telephony Integration (CTI) system. The project is structured with multiple plugins, providing core functionalities such as chat handling, agent routing, and CRM integration.
