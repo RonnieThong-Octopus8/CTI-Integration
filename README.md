@@ -34,7 +34,7 @@ cd novomind-applications/iagent-civicrm-master
 Navigate to inside Novomind application configurations.
 Replace placeholders with your actual CiviCRM and Novomind API credentials.
 
-### Build the Project: ### Use Gradle to build the project:
+### Build the Project: Use Gradle to build the project:
 ./gradlew build
 
 Run the Application: You can run the application directly after uploading the built file into Novomind.
